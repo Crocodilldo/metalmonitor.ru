@@ -28,7 +28,7 @@ class CategoriesTableSeeder extends Seeder
             'Квадрат'
         ];
         foreach ($data as $category)
-        DB::table('categorys')->insert([
+        DB::table('categories')->insert([
             'name'=>$category,
             'created_at' => Carbon::now()->toDateTimeString()
         ]);

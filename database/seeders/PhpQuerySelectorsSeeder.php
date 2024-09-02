@@ -23,14 +23,14 @@ class PhpQuerySelectorsSeeder extends Seeder
             ],
 
             [   //Arsenal
-                'shop_id'=>'3',
+                'shop_id'=>'2',
                 'product_information'=>'.product-block .description h3',
                 'price'=>'.price-by-card .js-value',
                 'url'=>'.product-block .description h3 a',
             ],
 
             [   //MXT22
-                'shop_id'=>'4',
+                'shop_id'=>'3',
                 'product_information'=>'.i-hate-metal',
                 'price'=>'.unit2',
                 'url'=>'.i-hate-metal',
