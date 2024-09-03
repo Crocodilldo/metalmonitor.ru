@@ -15,7 +15,7 @@ class CategoriesTableSeeder extends Seeder
     public function run(): void
     {
         $data=[
-            'Труба водогазопроводная',
+            'Труба круглая',
             'Труба профильная',
             'Круг',
             'Арматура',

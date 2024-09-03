@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreign('category_id')->references('id')->on('categories');
             $table->bigInteger('shop_id')->unsigned();
             $table->foreign('shop_id')->references('id')->on('shops');
-            $table->string('parameters');
+            $table->string('parameter')->nullable();
             $table->string('price');
             $table->string('url')->unique();            $table->timestamps();
         });
