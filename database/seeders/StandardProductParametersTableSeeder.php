@@ -866,9 +866,10 @@ class StandardProductParametersTableSeeder extends Seeder
             ['category_id' => '11', 'parameter' => '300х300', 'weight_per_meter' => '698'],
         ];
         foreach ($data as $parameter)
-            DB::table('standart_product_parameters')->insert([
+            DB::table('standard_product_parameters')->insert([
                 'category_id' => $parameter['category_id'],
                 'parameter' => $parameter['parameter'],
+                'weight_per_meter' => $parameter['weight_per_meter'],
                 'created_at' => Carbon::now()->toDateTimeString()
             ]);
     }

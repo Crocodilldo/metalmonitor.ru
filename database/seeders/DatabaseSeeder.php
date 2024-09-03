@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CategoriesTableSeeder::class);
         $this->call(UpdateLinksSeeder::class);
         $this->call(PhpQuerySelectorsSeeder::class);
+        $this->call(StandardProductParametersTableSeeder::class);
     }
 }
