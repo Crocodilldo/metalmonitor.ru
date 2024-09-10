@@ -18,7 +18,7 @@ class PhpQuerySelectorsSeeder extends Seeder
             [   //FormulaM2
                 'shop_id'=>'1',
                 'product_information'=>'.js-toclamp-4',
-                'price'=>'.product-card__new-price span',
+                'price'=>'.product-card__new-price span:not([class])',
                 'url'=>'.product-card__title a',
             ],
 

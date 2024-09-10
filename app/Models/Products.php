@@ -13,7 +13,7 @@ class Products extends Model
         'name',
         'category_id',
         'shop_id',
-        'parameters',
+        'parameter',
         'price',
         'url',
         'updated_at'
