@@ -9,7 +9,7 @@ class Products extends Model
 {
     use HasFactory;
 
-    protected $fillable=[
+    protected $fillable = [
         'name',
         'category_id',
         'shop_id',
@@ -19,11 +19,13 @@ class Products extends Model
         'updated_at'
     ];
 
-    public function categories(){
+    public function category()
+    {
         return $this->belongsTo(Categories::class);
     }
 
-    public function shop(){
+    public function shop()
+    {
         return $this->belongsTo(Shops::class);
-    }    
+    }
 }

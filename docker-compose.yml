@@ -37,10 +37,10 @@ services:
             - .docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
             - .docker/db/sql:/docker-entrypoint-initdb.d
         environment:
-            MYSQL_ROOT_PASSWORD: root
+            MYSQL_ROOT_PASSWORD: wert
             MYSQL_DATABASE: metalmonitor.ru
-            MYSQL_USER: root
-            MYSQL_PASSWORD: root
+            MYSQL_USER: wert
+            MYSQL_PASSWORD: wert
 
     ####################################################################################################
     # phpMyAdmin
