@@ -25,12 +25,13 @@ class ShopService
         $request->validate([
             'name' => 'required|unique:shops,name',
             'url' => 'required|unique:shops,url',
-            'logo' => 'image']);
+            'logo' => 'image'
+        ]);
 
-            $slug = $slugAction->handle($request['name']);
+        $slug = $slugAction->handle($request['name']);
 
         if ($request->file('logo') !== null)
-            $logo = $request->file('logo')->storeAs('logo', $slug.'.webp');
+            $logo = $request->file('logo')->storeAs('logo', $slug . '.webp');
         else $logo = 'no_logo';
 
         DB::table('shops')->insert([
@@ -42,9 +43,17 @@ class ShopService
     }
 
     public function deleteShop(Request $request)
-    {       //TODO : Casscade delete!!!
+    {
         if (isset($request['confirm']) && $request['confirm'] == 'удалить') {
-            DB::table('shops')->where('id', '=', $request['shop_id'])->delete();
+            DB::transaction(
+                function () use ($request) {
+                    DB::table('products')->where('shop_id', '=', $request['shop_id'])->delete();
+                    DB::table('update_links')->where('shop_id', '=', $request['shop_id'])->delete();
+                    DB::table('php_query_selectors')->where('id', '=', $request['shop_id'])->delete();
+                    DB::table('shops')->where('id', '=', $request['shop_id'])->delete();
+                }
+            );
+
             Session::flash('flash message', 'Магазин успешно удален');
         } else
             Session::flash('flash message', 'Магазин не удален');
@@ -54,9 +63,9 @@ class ShopService
     {
         $request->validate(['new_logo' => 'image']);
         $slug = $slugAction->handle($request['name']);
-        Storage::disk('local')->delete('logo/'.$slug.'.webp');
+        Storage::disk('local')->delete('logo/' . $slug . '.webp');
         if ($request->file('new_logo') !== null)
-            $logo = $request->file('new_logo')->storeAs('logo', $slug.'.webp');
+            $logo = $request->file('new_logo')->storeAs('logo', $slug . '.webp');
 
         DB::table('shops')->where('name', $request['shop_old_name'])->update([
             'name' => htmlspecialchars($request['name']),
@@ -65,5 +74,4 @@ class ShopService
         ]);
         Session::flash('flash message', 'Магазин "' . $request['name'] . '" успешно обновлен');
     }
-
 }
