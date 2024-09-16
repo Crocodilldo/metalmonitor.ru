@@ -10,7 +10,7 @@
             <p><select name="category">
 
 
-                    @foreach($categorys as $category)
+                    @foreach($categories as $category)
                         @if($category->id ==$update_link_category))
                             <option value="{{$category->id}}" selected>{{$category->name}}</option>
                         @else

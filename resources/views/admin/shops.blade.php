@@ -13,8 +13,8 @@
                 <tr>
                     <th>Id</th>
                     <th>Название</th>
+                    <th>Logo</th>
                     <th>Slug</th>
-                    <th>Период <br>обновления</th>
                     <th>Последнее<br>обновление</th>
                     <th>Действия</th>
                 </tr>
@@ -24,9 +24,9 @@
                 @foreach($list as $line)
                     <tr>
                         <td>{{$line['id']}}</td>
-                        <td>{{$line['name']}}<img src="{{asset('storage/'.$line['logo'])}}"></td>
+                        <td>{{$line['name']}}</td>
+                        <td><img src="{{asset('storage/logo/'.$line['slug'].'.webp')}}"></td>
                         <td>{{$line['slug']}}</td>
-                        <td>{{$line['update_period']}} сек.</td>
                         <td>{{$line['updated_at']}}</td>
                         <td>
                             <a href="{{route('update_products', [

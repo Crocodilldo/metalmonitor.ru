@@ -15,9 +15,6 @@ class ParsingService
 
     public function getProduct($site_content, Request $request, $category_id)
     {
-
-        $request['shop_id'] = '3';        //TODO : Delete test shop_id
-
         $selectors = PhpQuerySelectors::where('shop_id', $request['shop_id'])->get()->toArray();
 
         //Преобразование результата в объект phpQuery

@@ -10,7 +10,7 @@
             <p><select name="category">
                     <option disabled selected>Выберите категорию:</option>
 
-                    @foreach($categorys as $category)
+                    @foreach($categories as $category)
                         <option value="{{$category->id}}">{{$category->name}}</option>
                     @endforeach
 

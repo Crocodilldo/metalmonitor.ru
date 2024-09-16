@@ -5,14 +5,16 @@
     <title>Metalmonitor</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-
+    @vite(['resources/css/layout.css','resources/css/framework.css',
+            'resources/js/jquery.backtotop.js','resources/js/jquery.min.js',
+            'resources/js/jquery.mobilemenu.js', 'resources/js/jquery.placeholder.min.js'])
+<!-- 
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/framework.css">
     <script src="js/jquery.backtotop.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.mobilemenu.js"></script>
-    <script src="js/jquery.placeholder.min.js"></script>
+    <script src="js/jquery.placeholder.min.js"></script> -->
 </head>
 
 <body id="top">

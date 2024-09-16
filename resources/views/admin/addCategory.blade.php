@@ -7,9 +7,6 @@
             <p>Добавить новую категорию:</p>
             <p><input type="text" name="name" placeholder="Название категории"></p>
             <br>
-            <p>Загрузить изображение:</p>
-            <p> <input type="file" name="img"></p>
-            <br>
             <p><input type="submit" value="Добавить категорию"></p>
         </form>
 

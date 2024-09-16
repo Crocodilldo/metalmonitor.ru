@@ -10,9 +10,6 @@
             <p> <input type="text" name="name" placeholder="Название магазина" value="{{$shop_name}}"></p>
             <p> <input type="url" name="url" placeholder="Адрес сайта" value="{{$shop_url}}"></p>
             <br>
-            <p>Период обновления(сек.):</p>
-            <input type="number" name="update_period" value="{{$update_period}}">
-            <br>
             <img src="{{asset('storage/'.$shop_logo)}}">
             <p>Загрузка нового логотипа:</p>
             <p> <input type="file" name="new_logo"></p>

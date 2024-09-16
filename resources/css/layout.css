@@ -273,7 +273,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#00BCDF;}
 /* Rows */
 .row0, .row0 a{color:#4A4A4A; background-color:#F2F1EE;}
 .row1{color:#FFFFFF;
-    background: #3C4348 url("/public/images/demo/backgrounds/top-background.webp");
+    background: #3C4348;
 }
 .row2{color:#FFFFFF; background:#1B1A1D ;}
 .row3{color:#4A4A4A; background-color:#F2F1EE;}

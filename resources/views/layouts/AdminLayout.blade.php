@@ -9,7 +9,7 @@
                     <ul>
                         <li><a href="/admin/shops">Магазины</a></li>
 
-                        <li><a href="/admin/categorys">Категории</a></li>
+                        <li><a href="/admin/categories">Категории</a></li>
 
                         <li><a href="{{route('show_all_update_links')}}">Ссылки для парсинга</a></li>
 
