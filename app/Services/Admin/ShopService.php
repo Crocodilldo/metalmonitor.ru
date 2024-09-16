@@ -42,15 +42,18 @@ class ShopService
         ]);
     }
 
-    public function deleteShop(Request $request)
+    public function deleteShop(Request $request, CreateSlugAction $slugAction)
     {
+        $slug = $slugAction->handle($request['shop_name']);
         if (isset($request['confirm']) && $request['confirm'] == 'удалить') {
             DB::transaction(
-                function () use ($request) {
+                function () use ($request, $slug) {
+                    Storage::delete('logo/'.$slug.'.webp');
                     DB::table('products')->where('shop_id', '=', $request['shop_id'])->delete();
                     DB::table('update_links')->where('shop_id', '=', $request['shop_id'])->delete();
                     DB::table('php_query_selectors')->where('id', '=', $request['shop_id'])->delete();
                     DB::table('shops')->where('id', '=', $request['shop_id'])->delete();
+                    
                 }
             );
 

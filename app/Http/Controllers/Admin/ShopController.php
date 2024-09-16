@@ -35,9 +35,9 @@ class ShopController extends Controller
         return view('admin.confirmDeleteShop', ['shop_name' => $request->get('shop_name')]);
     }
 
-    public function deleteShop(Request $request, ShopService $shopservice)
+    public function deleteShop(Request $request, ShopService $shopservice, CreateSlugAction $slugAction)
     {
-        $shopservice->deleteShop($request);
+        $shopservice->deleteShop($request, $slugAction);
         return redirect(route('shops'));
     }
 

@@ -22,7 +22,7 @@
                 @foreach($list as $line)
                     <tr>
                         <td>{{$line['id']}}</td>
-                        <td>{{$line['category']->name}}</td>
+                        <td>{{$line['category_id']}}</td>
                         <td>...{{substr($line['url'], -75)}}</td>
                         <td>
                             <a href="{{route('edit_update_link',['update_link_id'=>$line['id'],

@@ -25,8 +25,8 @@
                     <tr>
                         <td>{{@$line['id']}}</td>
 
-                        <td><img src="{{asset('storage/'.@$line['shop']->logo)}}"></td>
-                        <td>{{@$line['category']->name}}</td>
+                        <td>{{$line['shop']->name}}</td>
+                        <td>{{$line['category_id']}}</td>
                         <td>...{{substr(@$line['url'], -65)}}</td>
                         <td>
                             <a href="{{route('edit_update_link',['update_link_id'=>$line['id'],
